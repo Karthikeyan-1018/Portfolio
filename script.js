@@ -119,7 +119,7 @@ const barObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = "https://portfolio-backend-n55i.onrender.com/api";
 
 // ✅ Matches your actual HTML
 
