@@ -118,3 +118,57 @@ const barObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
+
+const API_URL = 'http://localhost:5000/api';
+
+// ✅ Matches your actual HTML
+
+
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Button clicked ✅");
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    console.log("Sending data...");
+
+    const data = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value
+    };
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      console.log("Response:", result);
+
+      document.querySelector(".submit-btn").innerText = "Sent ✅";
+      form.reset();
+      if (!data.email || !data.message) {
+  alert("Fill all fields");
+  return;
+}
+
+
+    } catch (err) {
+      console.error("Error:", err);
+      alert("Failed to send message ❌");
+    }
+  });
+});

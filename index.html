@@ -414,31 +414,32 @@
         </div>
       </div>
     </div>
-    <div class="contact-form reveal-right">
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Keyan"/>
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="A"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="keyan@example.com"/>
-      </div>
-      <div class="form-group">
-        <label>Subject</label>
-        <input type="text" placeholder="Project Collaboration"/>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Tell me about your project..."></textarea>
-      </div>
-      <button class="submit-btn"><i class="fas fa-paper-plane"></i> &nbsp;Send Message</button>
+    <!-- ✅ FIXED — with id attributes -->
+<form id="contactForm" class="contact-form reveal-right">
+  <div class="form-row">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" id="firstName" placeholder="Keyan"/>
     </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" id="lastName" placeholder="A"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email Address</label>
+    <input type="email" id="email" placeholder="keyan@example.com"/>
+  </div>
+  <div class="form-group">
+    <label>Subject</label>
+    <input type="text" id="subject" placeholder="Project Collaboration"/>
+  </div>
+  <div class="form-group">
+    <label>Message</label>
+    <textarea id="message" placeholder="Tell me about your project..."></textarea>
+  </div>
+  <button class="submit-btn"><i class="fas fa-paper-plane"></i> &nbsp;Send Message</button>
+</form>
   </div>
 </section>
 
