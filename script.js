@@ -147,13 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+     const API_URL = "https://portfolio-backend-n55i.onrender.com";
+
+const res = await fetch(`${API_URL}/api/contact`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+});
 
       const result = await res.json();
       console.log("Response:", result);
