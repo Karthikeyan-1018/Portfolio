@@ -13,8 +13,9 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:5500', '*'],
-  methods: ['GET', 'POST', 'DELETE'],
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
 
